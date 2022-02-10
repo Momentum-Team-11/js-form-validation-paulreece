@@ -28,6 +28,7 @@ function luhnCheck(val) {
 }
 
 submit.addEventListener("click", function (e) {
+  e.preventDefault();
   let d = new Date(startD.value);
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let weekDay = ["Mon", "Tue", "Wed", "Thu"];
