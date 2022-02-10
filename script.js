@@ -4,6 +4,8 @@ let submit = document.getElementById("submit-button");
 let parking = days + "*5";
 let date = document.getElementById("start-date");
 let startD = document.getElementById("start-date");
+let form = document.getElementById("parking-form");
+let cvv = document.getElementById("cvv");
 
 function validateCardNumber(number) {
   var regex = new RegExp("^[0-9]{16}$");
@@ -27,8 +29,7 @@ function luhnCheck(val) {
   return sum % 10 == 0;
 }
 
-submit.addEventListener("click", function (e) {
-  e.preventDefault();
+submit.addEventListener("click", function () {
   let d = new Date(startD.value);
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let weekDay = ["Mon", "Tue", "Wed", "Thu"];
