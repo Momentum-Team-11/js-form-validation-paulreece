@@ -9,7 +9,7 @@ submit.addEventListener("click", function (e) {
   e.preventDefault();
   let totaled = day.value * 5;
   console.log(totaled);
-  total.innerHTML = totaled;
+  total.innerHTML = "Total: $" + totaled + ".00";
 });
 
 // function validateForm()
