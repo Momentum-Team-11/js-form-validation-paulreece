@@ -31,7 +31,8 @@
         </div>
         <div class="input-field" id="credit-card-field">
           <label for="credit-card">Credit Card</label>
-          <input id="credit-card" type="text" required>
+          <input id="credit-card" type="text" pattern="[0-9]{16}" required
+          oninvalid="this.setCustomValidity('Credit Card Invalid! :-/')">
         </div>
         <div class="row">
           <div class="col">
