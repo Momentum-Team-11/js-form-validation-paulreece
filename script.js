@@ -17,7 +17,7 @@ console.log(minDate);
 
 date.setAttribute("min", minDate);
 
-carYear.setAttribute("min", cy);
+carYear.setAttribute("max", cy);
 
 function validateCardNumber(number) {
   var regex = new RegExp("^[0-9]{16}$");
