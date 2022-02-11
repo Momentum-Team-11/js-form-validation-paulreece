@@ -48,12 +48,19 @@ submit.addEventListener("click", function () {
   let dayName = days[d.getDay(startD)];
   let cnum = document.getElementById("credit-card").value;
   console.log(dayName);
-  if (weekDay.includes(dayName)) {
-    let totaled = day.value * 5;
-    total.innerHTML = "Total: $" + totaled + ".00";
+
+  if (day.value > 30) {
+    console.log("invalid");
+  } else if (day.value < 1) {
+    console.log("invalid");
   } else {
-    let totaley = day.value * 7;
-    total.innerHTML = "Total: $" + totaley + ".00";
+    if (weekDay.includes(dayName)) {
+      let totaled = day.value * 5;
+      total.innerHTML = "Total: $" + totaled + ".00";
+    } else {
+      let totaley = day.value * 7;
+      total.innerHTML = "Total: $" + totaley + ".00";
+    }
   }
   validateCardNumber(cnum);
 });
