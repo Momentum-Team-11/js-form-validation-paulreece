@@ -6,6 +6,14 @@ let date = document.getElementById("start-date");
 let startD = document.getElementById("start-date");
 let form = document.getElementById("parking-form");
 let cvv = document.getElementById("cvv");
+let today = new Date();
+
+let minDate = new Date(today.setDate(today.getDate() + 1))
+  .toISOString()
+  .split("T")[0];
+console.log(minDate);
+
+date.setAttribute("min", minDate);
 
 function validateCardNumber(number) {
   var regex = new RegExp("^[0-9]{16}$");
