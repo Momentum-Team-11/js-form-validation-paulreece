@@ -9,6 +9,31 @@ let cvv = document.getElementById("cvv");
 let today = new Date();
 let carYear = document.getElementById("car-year");
 let cy = new Date().getFullYear();
+let exY = cy.toString().slice(-2);
+let exD = new Date().getMonth();
+let expDate = document.getElementById("expiration");
+const e = new Date();
+const months = {
+  0: "01",
+  1: "02",
+  2: "03",
+  3: "04",
+  4: "05",
+  5: "06",
+  6: "07",
+  7: "08",
+  8: "09",
+  9: "10",
+  10: "11",
+  11: "12",
+};
+const monthIndex = e.getMonth();
+const monthName = months[monthIndex];
+let expyD = monthName + exY;
+
+console.log(expDate);
+
+// expDate.addEventListener("keyboard", function () {});
 
 let minDate = new Date(today.setDate(today.getDate() + 1))
   .toISOString()
@@ -18,6 +43,8 @@ console.log(minDate);
 date.setAttribute("min", minDate);
 
 carYear.setAttribute("max", cy);
+
+// expDate.setAttribute("min", expyD);
 
 function validateCardNumber(number) {
   var regex = new RegExp("^[0-9]{16}$");
@@ -60,6 +87,20 @@ submit.addEventListener("click", function () {
     } else {
       let totaley = day.value * 7;
       total.innerHTML = "Total: $" + totaley + ".00";
+    }
+  }
+  let mon = expDate.value.slice(0, 2);
+  let yea = expDate.value.slice(2);
+
+  console.log(mon);
+  console.log(yea);
+  {
+    if (mon > 12) {
+      expDate.setCustomValidity("Month must be between 01-12.");
+    } else if (yea < 22) {
+      expDate.setCustomValidity("Year must be this year or later.");
+    } else {
+      expDate.setCustomValidity("");
     }
   }
   validateCardNumber(cnum);
