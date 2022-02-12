@@ -98,8 +98,8 @@ submit.addEventListener("click", function () {
     if (mon > 12) {
       expDate.setCustomValidity("Month must be between 01-12.");
     } else if (mon < monthName) {
-      expDate.setCustomValidity("Month must be current month or later.");
-    } else if (yea < 22) {
+      expDate.setCustomValidity("Month must be current month or later");
+    } else if (yea < exY) {
       expDate.setCustomValidity("Year must be this year or later.");
     } else {
       expDate.setCustomValidity("");
