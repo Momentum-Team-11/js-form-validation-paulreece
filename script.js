@@ -95,7 +95,11 @@ submit.addEventListener("click", function () {
   console.log(mon);
   console.log(yea);
   {
-    if (mon > 12) {
+    if (expDate.value.length > 4) {
+      expDate.setCustomValidity(
+        "Please match specified format. Enter a 4 digit number"
+      );
+    } else if (mon > 12) {
       expDate.setCustomValidity("Month must be between 01-12.");
     } else if (mon < monthName) {
       expDate.setCustomValidity("Month must be current month or later");
